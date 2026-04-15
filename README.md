@@ -69,3 +69,73 @@ Secure_Notes/
     ├── src/                  # Components, Context API, utils
     ├── package.json          # Node dependencies
     └── tailwind.config.js    # Tailwind configuration
+
+🚀 How to Run the Project Locally
+Prerequisites
+Before you begin, ensure you have the following installed on your machine:
+
+Java Development Kit (JDK) 17 or higher
+
+Node.js (v16 or higher) and npm
+
+MySQL Server (Running locally on port 3306)
+
+A code editor (IntelliJ IDEA for backend, VS Code for frontend)
+
+Step 1: Database Setup
+Open your MySQL client (e.g., MySQL Workbench).
+
+Create a new database named securenotes:
+
+SQL
+CREATE DATABASE securenotes;
+
+Step 2: Backend Setup
+Open your terminal and navigate to the backend folder:
+
+Bash
+cd backend
+Open src/main/resources/application.properties and configure your credentials:
+
+Properties
+# MySQL Credentials
+spring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+
+# Email Configuration (For Collaboration & Password Resets)
+spring.mail.username=YOUR_GMAIL_ADDRESS
+spring.mail.password=YOUR_GMAIL_APP_PASSWORD
+
+# JWT Secret (Generate a strong 256-bit string)
+spring.app.jwtSecret=YOUR_SUPER_SECRET_JWT_KEY
+Run the Spring Boot application:
+
+Bash
+./mvnw spring-boot:run
+(The backend server will start on http://localhost:8080)
+
+Step 3: Frontend Setup
+Open a new terminal window and navigate to the frontend folder:
+
+Bash
+cd frontend
+Install the necessary Node modules:
+
+Bash
+npm install
+Start the React development server:
+
+Bash
+npm start
+(The application will automatically open in your browser at http://localhost:3000)
+
+🤝 Usage Guide
+Sign Up: Create a new account via the /signup route.
+
+Create a Note: Use the Rich Text Editor to format and save a secure note.
+
+Collaborate: Click the "Share" icon on any of your notes and enter a colleague's email. They will receive an automated email invitation.
+
+Test Conflict Resolution: Open the shared note in two different browsers. Edit them simultaneously and watch the backend archive the older version to the NoteHistory table while accepting the newest edit.
+
+View Analytics: Navigate to the "My Notes" dashboard to see the live output of the CL-1 Activity Algorithm.
