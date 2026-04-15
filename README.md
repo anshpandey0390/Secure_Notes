@@ -69,8 +69,9 @@ Secure_Notes/
     ├── src/                  # Components, Context API, utils
     ├── package.json          # Node dependencies
     └── tailwind.config.js    # Tailwind configuration
+```
 
-🚀 How to Run the Project Locally
+## 🚀 How to Run the Project Locally
 Prerequisites
 Before you begin, ensure you have the following installed on your machine:
 
@@ -129,7 +130,7 @@ Bash
 npm start
 (The application will automatically open in your browser at http://localhost:3000)
 
-🤝 Usage Guide
+## 🤝 Usage Guide
 Sign Up: Create a new account via the /signup route.
 
 Create a Note: Use the Rich Text Editor to format and save a secure note.
